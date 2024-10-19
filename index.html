@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>T0-do web app</title>
+</head>
+<body>
+   <div class="container">
+    <div class="todo-header">
+        <h2>ToDo List</h2>
+        <img src="notebook.gif" alt="" height="50px">
+    </div>
+    <div class="todo-body">
+        <input type="text" id="myInput" class="todo-input" placeholder="Add your task">
+         <img src="plus1.jpg" alt="" onclick="newElement()">
+    </div>
+   <ul id="myUL" >
+    <li>Welcome to todo webapp</li>
+    <li class="checked">web developer</li>
+    <li>Car</li>
+    <li>Read a book</li>
+   </ul>
+   </div> 
+<script type="text/javascript">
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var img = document.createElement("IMAGE");
+  var txt = document.createTextNode("\u00D7");
+  img.className = "close";
+  img.appendChild(txt);
+  myNodelist[i].appendChild(img);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var img = document.createElement("IMAGE");
+  var txt = document.createTextNode("\u00D7");
+  img.className = "close";
+  img.appendChild(txt);
+  li.appendChild(img);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+</body>
+</html>

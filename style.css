@@ -1,0 +1,126 @@
+ *{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+     font-weight: 400; 
+    font-style: normal;
+    box-sizing: border-box;
+    
+ }
+
+ body{
+    background-color: hotpink;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+ }
+
+ .container{
+    background-color: #fff;
+    padding: 25px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow:5px 5px 5px 5px gray;
+ }
+
+ .todo-header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    align-items: center;
+    
+ }
+
+ .todo-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #edeef0;
+    border-radius: 30px;
+    margin-bottom: 20px;
+   
+ }
+
+ .todo-body input{
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 15px 0;
+    font-size: 20px;
+    margin-left: 50px;
+ }
+
+ .todo-body img{
+    cursor: pointer;
+    height: 55px;
+    width: 55px;
+    padding: 15px;
+    /* padding-left: 40px; */
+    background: lightgreen;
+    border-radius: 40px;
+    margin-left: 100px;
+ }
+
+ ul li{
+    list-style: none;
+    font-size: 18px ;
+    cursor: pointer;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    position: relative;
+    transition: 0.2s;
+border-radius: 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ }
+
+ul li:hover{
+    background-color: gray;
+}
+
+ul li.checked{
+    background-color: darkcyan;
+    color: white;
+    /* text-decoration: line-through; */
+}
+
+ul li.checked::before{
+    content: '';
+    position: absolute;
+    border-color: black;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+ li{
+    display: flex;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    background: #edeef0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+ }
+
+ .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+  
+  .close:hover {
+    background-color: #f44336;
+    color: white;
+  }
+
+  
